@@ -89,8 +89,8 @@ const HostLanding = () => {
         <Box sx={{ m: 2 }}>
           {' '}
           <a
-            href={`http://localhost:5173/join/${businessId}/${roomUid}`}
-          >{`http://localhost:5173/join/${businessId}/${roomUid}`}</a>
+            href={`https://mp-ads-platform-server-dc7ede6ac609.herokuapp.com/join/${businessId}/${roomUid}`}
+          >{`https://mp-ads-platform-server-dc7ede6ac609.herokuapp.com/join/${businessId}/${roomUid}`}</a>
         </Box>
 
         <Divider variant="middle" />
