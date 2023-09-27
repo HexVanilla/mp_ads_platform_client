@@ -9,6 +9,7 @@ import FullPageAd from './pages/FullPageAd'
 import GoodBye from './pages/GoodBye'
 import ServerDown from './pages/ServerDown'
 import Admin from './pages/Admin'
+import DefaultLanding from './pages/DefaultLanding'
 import { SocketProvider } from './components/SocketContext'
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
       <div className="app">
         <SocketProvider>
           <Routes>
+            <Route exact path="/" element={<DefaultLanding />} />
+
             <Route exact path="/:businessId" element={<HostLanding />} />
             <Route
               exact
