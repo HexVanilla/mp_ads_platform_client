@@ -5,9 +5,7 @@ export const SocketContext = createContext()
 
 export const SocketProvider = ({ children }) => {
   const [socketError, setSocketError] = useState(null)
-  const socket = io.connect(
-    'https://mp-ads-platform-server-dc7ede6ac609.herokuapp.com:3001/'
-  )
+  const socket = io.connect('/')
 
   useEffect(() => {
     socket.on('connect_error', (err) => {
