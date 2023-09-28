@@ -16,6 +16,7 @@ import {
 } from '@mui/material'
 
 import { SocketContext } from '../components/SocketContext'
+import QRCodeGenerator from '../components/QRCodeGenerator'
 import ReactGA from 'react-ga4'
 
 const HostLanding = () => {
@@ -86,11 +87,17 @@ const HostLanding = () => {
         <DialogTitle>
           Muestra este Codigo a tus acompanantes para que se unan a tu sesion!
         </DialogTitle>
-        <Box sx={{ m: 2 }}>
-          {' '}
-          <a
-            href={`https://mp-ads-platform-server-dc7ede6ac609.herokuapp.com/join/${businessId}/${roomUid}`}
-          >{`https://mp-ads-platform-server-dc7ede6ac609.herokuapp.com/join/${businessId}/${roomUid}`}</a>
+        <Box
+          sx={{
+            m: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <QRCodeGenerator
+            url={`https://mp-ads-platform-server-dc7ede6ac609.herokuapp.com/join/${businessId}/${roomUid}`}
+          />
         </Box>
 
         <Divider variant="middle" />

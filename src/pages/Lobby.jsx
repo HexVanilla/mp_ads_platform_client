@@ -11,6 +11,7 @@ import {
 } from '@mui/material'
 import Header from '../components/Header'
 import PlayerCard from '../components/PlayerCard'
+import QRCodeGenerator from '../components/QRCodeGenerator'
 import { SocketContext } from '../components/SocketContext'
 import ReactGA from 'react-ga4'
 
@@ -20,6 +21,7 @@ const Lobby = () => {
   const [avatarImages, setAvatarImages] = useState('')
   const [availableGames, setAvailableGames] = useState('')
   const [showGames, setShowGames] = useState(false)
+  const [showQr, setShowQr] = useState(false)
   const { roomId, businessId } = useParams()
 
   const { socket } = useContext(SocketContext)
@@ -221,6 +223,27 @@ const Lobby = () => {
             </Card>
           ))}
       </Drawer>
+      <Drawer anchor={'top'} open={showQr}>
+        <Card sx={{ m: 2 }}>
+          <CardContent>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <QRCodeGenerator
+                url={`https://mp-ads-platform-server-dc7ede6ac609.herokuapp.com/join/${businessId}/${roomId}`}
+              />
+              <Button variant="contained" onClick={() => setShowQr(false)}>
+                Cerrar
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </Drawer>
       <Card sx={{ width: '100%', m: 0, boxShadow: 'none' }}>
         <Header roomInfo={roomInfo.ads} />
         {roomInfo !== '' ? (
@@ -238,11 +261,15 @@ const Lobby = () => {
                   <Typography variant="subtitle1">
                     {roomInfo.hostName.toUpperCase()}
                   </Typography>
+
                   <Button
                     variant="contained"
                     onClick={() => setShowGames(true)}
                   >
                     Elige un juego
+                  </Button>
+                  <Button variant="outlined" onClick={() => setShowQr(true)}>
+                    Mostrar QR
                   </Button>
                 </div>
               </CardContent>
