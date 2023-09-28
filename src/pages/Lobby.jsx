@@ -45,12 +45,12 @@ const Lobby = () => {
     ReactGA.send({
       hitType: 'pageview',
       page: `/lobby/${businessId}/${roomId}`,
-      title: 'lobby',
+      title: `${businessId}_lobby`,
     })
   }, [])
 
   useEffect(() => {
-    if (socketError !== null) navigate(`/serverDown`)
+    if (socketError !== null) navigate(`/server-info`)
   }, [socketError])
 
   useEffect(() => {

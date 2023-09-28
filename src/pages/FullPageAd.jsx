@@ -15,7 +15,7 @@ const FullPageAd = () => {
     ReactGA.send({
       hitType: 'pageview',
       page: `/ads/${businessId}/${roomId}`,
-      title: `fullPageAd_${businessId}`,
+      title: `${businessId}_fullPageAd`,
     })
   }, [])
 

@@ -35,16 +35,20 @@ const ServerDown = () => {
       }}
     >
       <CardContent>
-        <Typography variant="h2">Servidor en Mantencion!</Typography>
+        <Typography variant="overline">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti
+          quas veritatis accusantium rerum dolores accusamus, asperiores cum
+          maxime, explicabo ea non praesentium tempore, ipsum tempora a harum
+          ratione eveniet consequatur?
+        </Typography>
+      </CardContent>
+      <CardContent>
+        <Typography variant="overline">www.loremipsum.com</Typography>
       </CardContent>
       <CardContent>
         <Typography variant="caption">
           {errorMsg !== null ? errorMsg : 'Status: Ok'}
         </Typography>
-      </CardContent>
-      <CardContent>
-        {' '}
-        <Typography variant="overline">www.loremipsum.com</Typography>
       </CardContent>
     </Card>
   )

@@ -23,7 +23,7 @@ const BalloonPopperGame = () => {
     ReactGA.send({
       hitType: 'pageview',
       page: `/balloonPopperGame/${businessId}/${roomId}`,
-      title: 'balloonPopper',
+      title: `${businessId}_balloonPopper`,
     })
   }, [])
 

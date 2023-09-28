@@ -44,7 +44,7 @@ const HostLanding = () => {
   }, [])
 
   useEffect(() => {
-    if (socketError !== null) navigate(`/serverDown`)
+    if (socketError !== null) navigate(`/server-info`)
   }, [socketError])
 
   useEffect(() => {

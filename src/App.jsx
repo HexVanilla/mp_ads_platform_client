@@ -35,7 +35,7 @@ function App() {
             />
             <Route path="/ads/:businessId/:roomId" element={<FullPageAd />} />
             <Route path="/goodbye/:businessId" element={<GoodBye />} />
-            <Route path="/serverDown" element={<ServerDown />} />
+            <Route path="/server-info" element={<ServerDown />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
         </SocketProvider>

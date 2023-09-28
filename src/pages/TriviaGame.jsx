@@ -51,7 +51,7 @@ const TriviaGame = () => {
     ReactGA.send({
       hitType: 'pageview',
       page: `/triviaGame/${businessId}/${roomId}`,
-      title: 'triviGame',
+      title: `${businessId}_triviaGame`,
     })
   }, [])
 
