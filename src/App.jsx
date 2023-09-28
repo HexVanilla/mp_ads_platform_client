@@ -18,8 +18,6 @@ function App() {
       <div className="app">
         <SocketProvider>
           <Routes>
-            <Route exact path="/" element={<DefaultLanding />} />
-
             <Route exact path="/:businessId" element={<HostLanding />} />
             <Route
               exact
